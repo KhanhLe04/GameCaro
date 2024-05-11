@@ -37,9 +37,9 @@ namespace GameCaro
                 gameCaro.GetName = tb_Name.Text;
                 gameCaro.Show();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Bạn nhập sai số phòng", "Thông báo");
+                MessageBox.Show($"{ex.Message}", "Thông báo");
             }
         }
         
