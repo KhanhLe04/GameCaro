@@ -15,7 +15,7 @@ namespace GameCaro
         public static int nCols = 35;
 
         public static int CountDownStep = 100;
-        public static int CountDownTime = 60000;
+        public static int CountDownTime = 20000;
         public static int CountDownInterval = 100;
     }
 }

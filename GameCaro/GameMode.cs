@@ -21,20 +21,22 @@ namespace GameCaro
         {
             try
             {
+                
                 if (tb_Name.Text == "")
                 {
                     MessageBox.Show("Bạn chưa nhập tên", "Thông báo");
                     return;
                 }
-                if (tb_Room.Text == "")
+                if (tb_Room.Text == "" || !Int32.TryParse(tb_Room.Text, out int tryInt))
                 {
-                    MessageBox.Show("Bạn chưa nhập số phòng", "Thông báo");
+                    MessageBox.Show("Phòng không hợp lệ !", "Thông báo");
                     return;
                 }
                 GameCaro gameCaro = new GameCaro();
                 gameCaro.GameMode = 1;
                 gameCaro.Room = int.Parse(tb_Room.Text);
                 gameCaro.GetName = tb_Name.Text;
+                gameCaro.Text = $"GameCaro (Name: {tb_Name.Text}, Room: {tb_Room.Text})";
                 gameCaro.Show();
             }
             catch (Exception ex)
